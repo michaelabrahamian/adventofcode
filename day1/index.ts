@@ -10,7 +10,7 @@ const getFileAndGetSum = async (filePath: string, regex: RegExp) => {
     let total = 0;
 
     for await (const line of file.readLines()) {
-        const sumOfLine = await getSumOfFirstAndLastDigit(line, regex);
+        const sumOfLine = getSumOfFirstAndLastDigit(line, regex);
 
         total += sumOfLine;
     }
@@ -25,7 +25,6 @@ const getFileAndGetSum = async (filePath: string, regex: RegExp) => {
 
 // Part 2
 
-console.log(REGEX_TO_MATCH_DIGITS_AS_LETTERS);
 getFileAndGetSum(INPUT_FILE_PATH, REGEX_TO_MATCH_DIGITS_AS_LETTERS).then(
     (sum: number) => console.log('Part 2 sum:', sum)
 );

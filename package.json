@@ -16,6 +16,6 @@
     },
     "scripts": {
         "test": "jest",
-        "day1": "yarn ts-node src/day1.ts"
+        "day1": "yarn ts-node day1"
     }
 }
