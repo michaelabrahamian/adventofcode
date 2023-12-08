@@ -1,0 +1,14 @@
+{
+  "name": "adventofcode2023",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "author": "Michael Abrahamian <mabrahamian@atlassian.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^20.10.4",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1"
+  }
+}
