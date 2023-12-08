@@ -25,8 +25,12 @@ export const getSumOfFirstAndLastDigit = (
 ): number => {
     const numbersInLine = line.match(regex);
 
-    const firstDigitAsString = convertToNumber(numbersInLine?.at(0));
-    const lastDigit = convertToNumber(numbersInLine?.at(-1));
+    if (!numbersInLine) {
+        return 0;
+    }
+
+    const firstDigitAsString = convertToNumber(numbersInLine.at(0));
+    const lastDigit = convertToNumber(numbersInLine.at(-1));
 
     const calibrationValueAsString = `${firstDigitAsString}${lastDigit}`;
     const calibrationValue = parseInt(calibrationValueAsString);

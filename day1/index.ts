@@ -1,6 +1,9 @@
 import { open } from 'fs/promises';
 import { getSumOfFirstAndLastDigit } from './getSumOfFirstAndLastDigit';
-import { REGEX_TO_MATCH_DIGITS_AS_LETTERS } from './constants';
+import {
+    REGEX_JUST_NUMBER_DIGITS,
+    REGEX_TO_MATCH_DIGITS_AS_LETTERS,
+} from './constants';
 
 const INPUT_FILE_PATH = './day1/input.txt';
 
