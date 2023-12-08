@@ -1,27 +1,31 @@
-// get input.txt file
-// for each line, get the first digit and the last digit and put together
-// then sum
+import { open } from 'fs/promises';
+import { getSumOfFirstAndLastDigit } from './getSumOfFirstAndLastDigit';
+import { REGEX_TO_MATCH_DIGITS_AS_LETTERS } from './constants';
 
-import * as fsPromise from 'fs/promises';
+const INPUT_FILE_PATH = './day1/input.txt';
 
-const getSum = async (): Promise<number> => {
-    const file = await fsPromise.open('./day1/input.txt', 'r');
+const getFileAndGetSum = async (filePath: string, regex: RegExp) => {
+    const file = await open(filePath, 'r');
 
     let total = 0;
 
     for await (const line of file.readLines()) {
-        const numbersInLine = line.match(/\d/g);
+        const sumOfLine = await getSumOfFirstAndLastDigit(line, regex);
 
-        const firstDigit = numbersInLine?.at(0);
-        const lastDigit = numbersInLine?.at(-1);
-
-        const calibrationValueAsString = `${firstDigit}${lastDigit}`;
-        const calibrationValue = parseInt(calibrationValueAsString);
-
-        total += calibrationValue;
+        total += sumOfLine;
     }
 
     return total;
 };
 
-getSum().then(console.log);
+// Part 1
+// getFileAndGetSum(INPUT_FILE_PATH, REGEX_JUST_NUMBER_DIGITS).then(
+//     (sum: number) => console.log('Part 1 sum:', sum)
+// );
+
+// Part 2
+
+console.log(REGEX_TO_MATCH_DIGITS_AS_LETTERS);
+getFileAndGetSum(INPUT_FILE_PATH, REGEX_TO_MATCH_DIGITS_AS_LETTERS).then(
+    (sum: number) => console.log('Part 2 sum:', sum)
+);
