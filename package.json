@@ -17,6 +17,7 @@
     "scripts": {
         "test": "jest",
         "day1": "yarn ts-node day1",
-        "day2": "yarn ts-node day2"
+        "day2": "yarn ts-node day2",
+        "day3": "yarn ts-node day3"
     }
 }

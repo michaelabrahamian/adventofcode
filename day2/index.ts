@@ -1,4 +1,3 @@
-import { subscribe } from 'diagnostics_channel';
 import { readFileSync } from 'fs';
 
 const INPUT_FILE_PATH = 'day2/input.txt';
